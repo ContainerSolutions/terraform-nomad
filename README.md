@@ -22,8 +22,6 @@
 
 ### Prepare variables.tf
 
-Create a file `mesos.tf` containing something like this:
-
 Copy the`variables.tf.example` file to `varables.tf` and adjust to your situation
 
 ### Create Terraform plan
