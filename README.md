@@ -1,6 +1,6 @@
 # Container Solutions Terraform Nomad
 
-## How to set up a Nomad cluster on the Google Cloud using Terraform
+How to set up a Nomad cluster on the Google Cloud using Terraform
 
 ### Install Terraform
 
