@@ -1,0 +1,50 @@
+## credential stuff
+# path to the account file
+variable "account_file" {
+  default = "/path/to/account.json"
+}
+# the username to connect with
+variable "gce_ssh_user" {
+  default = "user"
+}
+# the private key of the user
+variable "gce_ssh_private_key_file" {
+  default = "/home/user/.ssh/google_compute_engine"
+}
+
+## google project stuff
+# the google region where the cluster should be created
+variable "region" {
+  default = "europe-west1"
+}
+# the google zone where the cluster should be created
+variable "zone" {
+  default = "europe-west1-d"
+}
+# the name of the google project
+variable "project" {
+  default = "myproject"
+}
+# image to use for installation
+variable "image" {
+    default = "ubuntu-os-cloud/ubuntu-1504-vivid-v20150911"
+}
+variable "machine_type" {
+    default = "g1-small"
+}
+
+## network stuff
+# the address of the subnet in CIDR
+variable "network" {
+    default = "10.11.12.0/24"
+}
+# public local address for unlimited access to the cluster, in CIDR
+variable "localaddress" {
+  default = "0.0.0.0"
+}
+
+# the name of the cluster
+variable "name" {
+  default = "nomad"
+}
+

@@ -1,0 +1,5 @@
+nomad.plan
+terraform.tfstate
+terraform.tfstate.backup
+variables.tf
+
