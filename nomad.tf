@@ -9,8 +9,8 @@ provider "google" {
 resource "google_compute_instance" "nomad-node" {
     count = "${var.numberofnodes}"
     name = "nomad${count.index+1}"
-    machine_type = "g1-small"
-    zone = "europe-west1-b"
+    machine_type = "${var.machine_type}"
+    zone = "${var.zone}"
     
     disk {
       image = "${var.image}"
@@ -41,7 +41,7 @@ resource "google_compute_instance" "nomad-node" {
     # install 
     provisioner "remote-exec" {
       scripts = [
-        "scripts/install.sh"
+        "resources/install.sh"
       ]
     }
 }
