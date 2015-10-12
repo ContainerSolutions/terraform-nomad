@@ -29,7 +29,7 @@ Copy the`variables.tf.example` file to `varables.tf` and adjust to your situatio
 Create the plan and save it to a file. 
 
 ```
-terraform plan -out my.plan -module-depth=1
+terraform plan -out my.plan
 ```
 
 ### Create the cluster
@@ -44,15 +44,22 @@ terraform apply my.plan
 
 Log in to the nodes. There is a default server.hcl there, copied from the resources dir, that you can use to start the node.
 Start the agent, specifying the address of eth0 to bind to.
-` sudo nomad agent -config server.hcl -bind=10.11.12.4`
+
+`sudo nomad agent -config server.hcl -bind=10.11.12.4`
 
 ### Join the nodes
 
 From one of the nodes, connect to the others.
 
-`sudo nomad server-join -address http://$OTHER_SERVER:4646 $MYADDRESS`
+`nomad server-join -address http://$OTHER_SERVER:4646 $MYADDRESS`
 
 You should see the servers joining in the logs. Repeat this step for all servers in the cluster.
+
+### Set environment variable
+
+To be able to reach the agent, export the NOMAD_ADDR variable.
+
+`export NOMAD_ADDR="http://nomad1:4646"`
 
 ### Destroy the cluster
 When you're done, clean up the cluster with
