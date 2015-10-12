@@ -11,7 +11,7 @@ sudo curl -sSL https://get.docker.com/ | sh
 # Download Nomad
 echo Fetching Nomad...
 cd /tmp/
-wget https://dl.bintray.com/mitchellh/nomad/nomad_$NOMAD_VERSION_linux_amd64.zip -O nomad.zip
+wget https://dl.bintray.com/mitchellh/nomad/nomad_${NOMAD_VERSION}_linux_amd64.zip -O nomad.zip
 
 echo Installing Nomad...
 unzip nomad.zip
