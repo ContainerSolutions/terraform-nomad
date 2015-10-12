@@ -40,7 +40,7 @@ resource "google_compute_instance" "nomad-node" {
     # copy files
     provisioner "file" {
       source = "resources/server.hcl"
-      destination = "/home/ubuntu/server.hcl"
+      destination = "/home/${var.gce_ssh_user}/server.hcl"
     }
 
     # install 
