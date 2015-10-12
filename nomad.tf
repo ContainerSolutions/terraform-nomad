@@ -25,6 +25,11 @@ resource "google_compute_instance" "nomad-node" {
       }
     }
     
+    # nomad version
+    metadata {
+      nomad_version = "${var.nomad_version}"
+    }
+
     # define default connection for remote provisioners
     connection {
       user = "${var.gce_ssh_user}"
