@@ -48,3 +48,8 @@ variable "name" {
   default = "nomad"
 }
 
+# the version of nomad to use
+variable "nomad_version" {
+  default = "0.1.0"
+}
+
