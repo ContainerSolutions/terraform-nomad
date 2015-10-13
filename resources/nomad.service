@@ -1,0 +1,11 @@
+[Unit]
+Description=Nomad, a cluster manager and scheduler for microservices and batch workloads.
+Documentation=https://nomadproject.io/docs
+After=network.target 
+
+[Service]
+Type=simple
+ExecStart= /usr/bin/nomad agent -config=/etc/nomad.d
+
+[Install]
+WantedBy=multi-user.target
