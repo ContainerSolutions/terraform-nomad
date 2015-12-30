@@ -1,6 +1,6 @@
 # provider stuff for connecting to google
 provider "google" {
-    account_file = "${var.account_file}"
+    credentials = "${file("${var.credentials}")}"
     project = "${var.project}"
     region = "${var.region}"
 }
