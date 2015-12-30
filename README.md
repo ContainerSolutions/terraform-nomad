@@ -40,12 +40,14 @@ Once you are satisfied with the plan, apply it.
 terraform apply my.plan
 ```
 
-### Start nomad on the nodes
+### Start nomad on every node
 
-Log in to the nodes. There is a default server.hcl there, copied from the resources dir, that you can use to start the node.
+Log in to every node. There is a default server.hcl there, copied from the resources dir, that you can use to start the node.
 Start the agent, specifying the address of eth0 to bind to.
 
 `sudo nomad agent -config server.hcl -bind=10.11.12.4`
+
+Execute this on every node, the agent needs to be running on all of them.
 
 ### Join the nodes
 
@@ -53,7 +55,7 @@ From one of the nodes, connect to the others.
 
 `nomad server-join -address http://$OTHER_SERVER:4646 $MYADDRESS`
 
-You should see the servers joining in the logs. Repeat this step for all servers in the cluster.
+You should see the node joining in the logs. Repeat this step for all nodes in the cluster.
 
 ### Set environment variable
 
